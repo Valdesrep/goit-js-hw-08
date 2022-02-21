@@ -30,6 +30,16 @@ function getFormValue() {
   }
 }
 
+// form.addEventListener('submit', event => {
+//   event.preventDefault();
+//   const formSubmitted = {};
+//   formSubmitted[event.currentTarget.elements[0].name] = event.currentTarget.elements[0].value;
+//   formSubmitted[event.currentTarget.elements[1].name] = event.currentTarget.elements[1].value;
+//   if (!event.currentTarget.elements[0].value || !event.currentTarget.elements[1].value) {
+//     alert('Fill in the Email and Message fields');
+//     return;
+//   }
+
 form.addEventListener('submit', event => {
   event.preventDefault();
   const formSubmitted = {};
@@ -38,8 +48,7 @@ form.addEventListener('submit', event => {
   if (!event.currentTarget.elements[0].value || !event.currentTarget.elements[1].value) {
     alert('Fill in the Email and Message fields');
     return;
-  }
-
+  } 
   console.log(formSubmitted);
   event.currentTarget.reset();
   localStorage.removeItem(saveValue);
